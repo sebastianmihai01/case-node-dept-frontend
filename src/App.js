@@ -208,12 +208,13 @@ const App = (props) => {
           </div>
           <div
             className="col-sm"
-            style={{ bottom: "0em", paddingInline: "10em" }}
+            style={{ marginTop: "3em", paddingInline: "0em", height:'4em' }}
           >
             <div
               class="card text-white bg-dark mb-3"
               style={{
                 opacity: "0.9",
+                height:'100em',
                 borderRadius: "0px",
                 backgroundColor: "rgba(245, 245, 245, 1)",
                 textAlign: "center",
@@ -285,7 +286,7 @@ const App = (props) => {
                       </h2>
                       <p style={{float:'right'}}>
                         {" "}
-                        If the Google OAuth2 yields a '400' error, please
+                        If the Google OAuth2 yields a '400' error,
                         refresh the page and try again (Strange error that occurs upon account creation)
                       </p>{" "}
                     </GoogleLogin>
