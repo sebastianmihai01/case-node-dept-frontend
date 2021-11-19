@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 import GoogleLogin from "react-google-login";
 import GoogleButton from "react-google-login";
 import React, {
@@ -19,6 +17,7 @@ import Contact from "./components/Misc/Contact";
 import Login from "./components/Auth/Login";
 import Home from "./components/Auth/Home";
 import SessionContext from "./components/Context/auth-context";
+require('dotenv').config()
 
 const App = (props) => {
   const [submitState, setSubmitState] = useState(
@@ -32,6 +31,7 @@ const App = (props) => {
 
   useEffect(async () => {
     localStorage.setItem("token", process.env.TOKEN)
+    localStorage.setItem("isLoggedIn", "false")
     let valid = await checkSession(userData);
     if (valid == false) setValidUser(false);
   }, validUser);
@@ -93,6 +93,8 @@ const App = (props) => {
 
   async function checkSession() {
     let valid = false;
+    localStorage.setItem("token", process.env.TOKEN)
+    localStorage.setItem("isLoggedIn", "false")
     await fetch("https://dept-node-case-backend.herokuapp.com/login", {
       method: "POST",
       headers: {
