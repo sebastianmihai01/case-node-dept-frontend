@@ -158,6 +158,10 @@ const App = (props) => {
             </Routes>
           </>
         )}
+      <meta
+        name="google-signin-client_id"
+        content="678540909389-rn0oidtibsjklbdbd2ken7l1ri3c4rgr.apps.googleusercontent.com"
+      />
 
       {!(localStorage.getItem("isLoggedIn") == "true") || !validUser ? (
         <React.Fragment>
@@ -238,11 +242,12 @@ const App = (props) => {
                   />
                   <label for="consentbox" style={{ fontSize: "18px" }}>
                     {" "}
-                    (GDPR) By proceeeding using this application I accept by default
-                    that the developer is not responsible for any GDPR, data leakage or user
-                    data related problems that might occur in the process, as
-                    the project is not meant for public use, but solely for
-                    evaluation purposes! (See Backend and Project Manunal for details) {" "}
+                    (GDPR) By proceeeding using this application I accept by
+                    default that the developer is not responsible for any GDPR,
+                    data leakage or user data related problems that might occur
+                    in the process, as the project is not meant for public use,
+                    but solely for evaluation purposes! (See Backend and Project
+                    Manunal for details){" "}
                   </label>
                 </form>
                 {consent == true &&
