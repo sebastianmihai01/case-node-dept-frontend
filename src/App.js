@@ -165,7 +165,7 @@ const App = (props) => {
         )}
       <meta
         name="google-signin-client_id"
-        content="678540909389-rn0oidtibsjklbdbd2ken7l1ri3c4rgr.apps.googleusercontent.com"
+        content={process.env.GOOGLE}
       />
 
       {!(localStorage.getItem("isLoggedIn") == "true") || !validUser ? (
@@ -270,7 +270,7 @@ const App = (props) => {
                     }}
                   >
                     <GoogleLogin
-                      clientId="678540909389-rn0oidtibsjklbdbd2ken7l1ri3c4rgr.apps.googleusercontent.com"
+                      clientId={process.env.GOOGLE}
                       buttonText="Login"
                       onSuccess={responseGoogleSuccess}
                       onFailure={responseGoogleFalse}
