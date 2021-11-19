@@ -17,7 +17,7 @@ import Contact from "./components/Misc/Contact";
 import Login from "./components/Auth/Login";
 import Home from "./components/Auth/Home";
 import SessionContext from "./components/Context/auth-context";
-require('dotenv').config()
+require("dotenv").config();
 
 const App = (props) => {
   const [submitState, setSubmitState] = useState(
@@ -30,8 +30,8 @@ const App = (props) => {
   const [userData, setUserData] = useState({});
 
   useEffect(async () => {
-    localStorage.setItem("token", process.env.TOKEN)
-    localStorage.setItem("isLoggedIn", "false")
+    localStorage.setItem("token", process.env.TOKEN);
+    localStorage.setItem("isLoggedIn", "false");
     let valid = await checkSession(userData);
     if (valid == false) setValidUser(false);
   }, validUser);
@@ -93,8 +93,8 @@ const App = (props) => {
 
   async function checkSession() {
     let valid = false;
-    localStorage.setItem("token", process.env.TOKEN)
-    localStorage.setItem("isLoggedIn", "false")
+    localStorage.setItem("token", process.env.TOKEN);
+    localStorage.setItem("isLoggedIn", "false");
     await fetch("https://dept-node-case-backend.herokuapp.com/login", {
       method: "POST",
       headers: {
@@ -163,10 +163,7 @@ const App = (props) => {
             </Routes>
           </>
         )}
-      <meta
-        name="google-signin-client_id"
-        content={process.env.GOOGLE}
-      />
+      <meta name="google-signin-client_id" content={process.env.GOOGLE} />
 
       {!(localStorage.getItem("isLoggedIn") == "true") || !validUser ? (
         <React.Fragment>
@@ -211,7 +208,7 @@ const App = (props) => {
           </div>
           <div
             className="col-sm"
-            style={{ bottom: "0em", paddingInline: "20em" }}
+            style={{ bottom: "0em", paddingInline: "10em" }}
           >
             <div
               class="card text-white bg-dark mb-3"
@@ -220,13 +217,13 @@ const App = (props) => {
                 borderRadius: "0px",
                 backgroundColor: "rgba(245, 245, 245, 1)",
                 textAlign: "center",
-                paddingInline: "6em",
+                paddingInline: "18em",
               }}
             >
               <div>
                 <p
                   style={{
-                    fontSize: "2em",
+                    fontSize: "25px",
                     textAlign: "center",
                     paddingInline: "1em",
                     textAlign: "center",
@@ -245,14 +242,14 @@ const App = (props) => {
                     style={{ float: "center", transform: "scale(1.5)" }}
                     onClick={acceptConsent}
                   />
-                  <label for="consentbox" style={{ fontSize: "18px" }}>
+                  <label for="consentbox" style={{ fontSize: "14px" }}>
                     {" "}
                     (GDPR) By proceeeding using this application I accept by
                     default that the developer is not responsible for any GDPR,
                     data leakage or user data related problems that might occur
                     in the process, as the project is not meant for public use,
                     but solely for evaluation purposes! (See Backend and Project
-                    Manunal for details){" "}
+                    Manual for details){" "}
                   </label>
                 </form>
                 {consent == true &&
@@ -266,7 +263,7 @@ const App = (props) => {
                       alignSelf: "center",
                       background: "green",
                       border: "3px solid green",
-                      marginInline: "10em",
+                      marginInline: "3em",
                     }}
                   >
                     <GoogleLogin
@@ -276,18 +273,25 @@ const App = (props) => {
                       onFailure={responseGoogleFalse}
                       cookiePolicy={"single_host_origin"}
                     >
-                      {" "}
+
                       <h2
                         style={{
                           textDecoration: "bold",
                           fontFamily: "monospace",
-                          fontSize: "27px",
+                          fontSize: "18px",
                         }}
                       >
-                        Log in with Google!
+                        Log me in! (See below for error 400)
                       </h2>
+                      <p style={{float:'right'}}>
+                        {" "}
+                        If the Google OAuth2 yields a '400' error, please
+                        refresh the page and try again (Strange error that occurs upon account creation)
+                      </p>{" "}
                     </GoogleLogin>
+
                   </div>
+                  
                 ) : (
                   ""
                 )}
