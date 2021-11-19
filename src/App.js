@@ -104,7 +104,7 @@ const App = (props) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.user != localStorage.getItem("token")) {
+        if (data.token != localStorage.getItem("token")) {
           throw new Error("Authentication problem! Please reload!");
           valid = false;
         }
