@@ -28,10 +28,9 @@ const Browse = () => {
     setIsLoading(true);
     setImdbModalOn(false);
     await fetch(
-      `http://localhost:8080/searchyoutube/${searchQuery}` +
+      `https://dept-node-case-backend.herokuapp.com/searchyoutube/${searchQuery}` +
         " Official Trailer",
       {
-        //await fetch("http://localhost:8080/testapi", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +77,7 @@ const Browse = () => {
       return;
     }
     console.log(title_query);
-    await fetch(`http://localhost:8080/searchimdb/${title_query}`, {
+    await fetch(`https://dept-node-case-backend.herokuapp.com/searchimdb/${title_query}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

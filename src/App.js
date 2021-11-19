@@ -59,7 +59,7 @@ const App = (props) => {
 
   async function dummyPost() {
     let valid = false;
-    await fetch("http://localhost:8080/testapi", {
+    await fetch("https://dept-node-case-backend.herokuapp.com/testapi", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const App = (props) => {
 
   async function loginUser(request_body) {
     let valid = false;
-    await fetch("http://localhost:8080/login", {
+    await fetch("https://dept-node-case-backend.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -90,7 +90,7 @@ const App = (props) => {
 
   async function checkSession() {
     let valid = false;
-    await fetch("http://localhost:8080/login", {
+    await fetch("https://dept-node-case-backend.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
