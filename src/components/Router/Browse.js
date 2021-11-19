@@ -124,7 +124,7 @@ const Browse = () => {
             rating={data.rating}
             date={data.date}
           >
-            <ShareModal />
+            <ShareModal name={data.title}/>
             <button type="button" class="btn btn-outline-dark" onClick={hide}>
               Close
             </button>

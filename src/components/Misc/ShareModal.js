@@ -57,10 +57,10 @@ const ShareModal = (props) => {
 
         <div class="col">
           <FacebookShareButton
-            url={"https://google.com"}
-            quote={"API test"}
-            hashtag={"#dept"}
-            description={"Check out this cool trailer!"}
+            url={"https://dept-node-case-front-sebastian.herokuapp.com/"}
+            quote={"DEPT Agency - Node case"}
+            hashtag={"#dept #api #films"}
+            description={props.name}
             className="Demo__some-network__share-button"
           >
             <button
@@ -83,10 +83,10 @@ const ShareModal = (props) => {
         </div>
         <div class="col">
           <TwitterShareButton
-            url={"https://google.com"}
-            quote={"API test"}
-            hashtag={"#dept"}
-            description={"Check out this cool trailer!"}
+            url={"https://dept-node-case-front-sebastian.herokuapp.com/"}
+            quote={"DEPT Agency - Node case"}
+            hashtag={"#dept #api #films"}
+            description={props.name}
             className="Demo__some-network__share-button"
           >
             <button
