@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 import GoogleLogin from "react-google-login";
 import GoogleButton from "react-google-login";
 import React, {
@@ -29,6 +31,7 @@ const App = (props) => {
   const [userData, setUserData] = useState({});
 
   useEffect(async () => {
+    localStorage.setItem("token", process.env.TOKEN)
     let valid = await checkSession(userData);
     if (valid == false) setValidUser(false);
   }, validUser);
