@@ -17,8 +17,8 @@ const ShareModal = (props) => {
       navigator
         .share({
           title: "Test",
-          text: "Text lmao",
-          url: "https://google.com",
+          text: "Text",
+          url: "",
         })
         .then(() => {
           console.log("User Shared!");

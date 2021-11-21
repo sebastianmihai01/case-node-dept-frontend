@@ -282,7 +282,7 @@ const App = (props) => {
                           fontSize: "18px",
                         }}
                       >
-                        Log me in! (See below for error 400)
+                        Log me in! (Only use Chrome/Firefox // See below for error 400)
                       </h2>
                       <p style={{float:'right'}}>
                         {" "}
@@ -311,7 +311,7 @@ const App = (props) => {
                     }}
                   >
                     <GoogleLogin
-                      clientId="678540909389-rn0oidtibsjklbdbd2ken7l1ri3c4rgr.apps.googleusercontent.com"
+                      clientId={process.env.GOOGLE}
                       buttonText="Login"
                       onSuccess={responseGoogleSuccess}
                       onFailure={responseGoogleFalse}
