@@ -10,7 +10,6 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const submitHandler = (event) => {
-    event.nativeEvent.stopImmediatePropagation();
     setSubmitted(true);
   };
 
@@ -195,7 +194,7 @@ const Contact = () => {
                       {!submitted && (
                         <button
                           class="btn btn-primary"
-                          type="submit"
+                          type="button"
                           style={{ marginBottom: "20px" }}
                         >
                           Submit form
