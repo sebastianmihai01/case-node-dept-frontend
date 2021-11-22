@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 import GoogleLogin from "react-google-login";
 import GoogleButton from "react-google-login";
 import React, {
